@@ -6,6 +6,11 @@ function linearSearch(array, searchTerm) {
 	 ** Return the index of the found element
 	 */
 
+	let n = array.length;
+	for (let i = 0; i < n; i++) {
+		if (array[i] == searchTerm) { return i; }
+	}
+
 	return null;
 }
 

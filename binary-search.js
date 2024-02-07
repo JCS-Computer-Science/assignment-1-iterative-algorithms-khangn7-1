@@ -7,8 +7,27 @@ function binarySearch(array, searchTerm) {
 	 ** repeat the above process for the subset of the array
 	 ** keep repeating with smaller and smaller subsets until you find the searchTerm
 	 */
+	let n = array.length,
+		start = 0,
+		end = n;
+		mid = Math.floor(n/2);
 
-	return null;
+	let guess = array[mid];
+
+	while (true) 
+	{
+
+		if (guess === searchTerm) {
+			return mid;
+		} else if (searchTerm < guess) {
+			end = mid;
+		} else {
+			start = mid + 1;
+		}
+
+		mid = Math.floor((start + end)/2);
+		guess = array[mid];
+	}
 }
 
 module.exports = binarySearch;
